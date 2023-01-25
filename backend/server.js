@@ -33,7 +33,7 @@ app.get("*", (req, res) =>
 const httpServer = http.Server(app);
 
 // Single routing
-router.route("/user").get(function (req, res, next) {
+router.get("/user", function (req, res, next) {
   const responseData = {
     message: "Hello, GFG Learner",
     articleData: {
@@ -46,6 +46,21 @@ router.route("/user").get(function (req, res, next) {
   // res.json(responseData);
   res.json({ project: "Magic Blocks" });
 });
+
+// // Single routing
+// router.route("/user").get(function (req, res, next) {
+//   const responseData = {
+//     message: "Hello, GFG Learner",
+//     articleData: {
+//       articleName: "How to send JSON response from NodeJS",
+//       category: "NodeJS",
+//       status: "published",
+//     },
+//     endingMessage: "Visit Geeksforgeeks.org for more",
+//   };
+//   // res.json(responseData);
+//   res.json({ project: "Magic Blocks" });
+// });
 
 router.route("/test").get((req, res) => {
   console.log("Hi");
