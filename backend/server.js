@@ -3,6 +3,7 @@ const cors = require("cors");
 var path = require("path");
 const router = express.Router();
 var dotenv = require("dotenv");
+let http = require("http");
 
 // require("dotenv").config();
 dotenv.config();
@@ -28,6 +29,8 @@ app.use(express.static(path.join(__dirname, "/frontend/build")));
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
 );
+
+const httpServer = http.Server(app);
 
 // Single routing
 router.route("/user").get(function (req, res, next) {
@@ -77,6 +80,9 @@ router.route("/post").get((req, res) => {
 
 app.use(router);
 
-app.listen(port, function () {
-  console.log(`Server running on port ${port}`);
+httpServer.listen(port, () => {
+  console.log(`Server at http://localhost:${port}`);
 });
+// app.listen(port, function () {
+//   console.log(`Server running on port ${port}`);
+// });

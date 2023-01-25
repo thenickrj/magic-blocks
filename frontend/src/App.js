@@ -43,7 +43,6 @@ function App() {
         >
           Learn React
         </a> */}
-        nick
       </header>
     </div>
   );
