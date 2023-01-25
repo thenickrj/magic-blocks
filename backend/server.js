@@ -1,8 +1,11 @@
 var express = require("express");
 const cors = require("cors");
+var path = require("path");
 const router = express.Router();
+var dotenv = require("dotenv");
 
 // require("dotenv").config();
+dotenv.config();
 
 var app = express();
 app.use(cors());
@@ -17,6 +20,14 @@ app.get("/home", function (req, res) {
   //   res.send({ val: "<div>A<h1>B</h1></div>" });
   res.json({ val: "Working" });
 });
+
+var __dirname = path.resolve();
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+app.use(express.static(path.join(__dirname, "/frontend/build")));
+
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
+);
 
 // Single routing
 router.route("/user").get(function (req, res, next) {
