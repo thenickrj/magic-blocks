@@ -42,7 +42,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a> */}
+        </a> c*/}
       </header>
     </div>
   );
