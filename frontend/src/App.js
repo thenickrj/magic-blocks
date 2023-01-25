@@ -35,14 +35,6 @@ function App() {
           alt="logo"
         />
         <p>Coming soon</p>
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> c*/}
       </header>
     </div>
   );
