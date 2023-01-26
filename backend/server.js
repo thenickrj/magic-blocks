@@ -34,7 +34,7 @@ app.get("*", (req, res) =>
 const httpServer = http.Server(app);
 
 // Single routing
-router.get("/user", function (req, res, next) {
+app.get("/user", function (req, res, next) {
   const responseData = {
     message: "Hello, GFG Learner",
     articleData: {

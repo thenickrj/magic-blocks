@@ -34,7 +34,7 @@ function App() {
           className="App-"
           alt="logo"
         />
-        <p>Coming soon</p>
+        <p>Coming soon!</p>
       </header>
     </div>
   );
