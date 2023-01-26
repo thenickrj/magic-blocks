@@ -21,13 +21,13 @@ function App() {
       }
     };
 
-    fetchWorkouts();
+    // fetchWorkouts();
   }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to {data.project}</h1>
+        {/* <h1>Welcome to {data.project}</h1> */}
         <img
           src={building}
           style={{ height: "200px" }}
