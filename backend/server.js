@@ -15,6 +15,16 @@ app.use(express.urlencoded({ extended: true }));
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });
+app.get("/users", async (req, res) => {
+  // let seller = req.query.seller || "";
+  // let sellerFilter = seller ? { seller } : {};
+
+  // let orders = await Order.find({ ...sellerFilter }).populate("user", "name");
+
+  // res.send(orders);
+  res.send({ project: "Magic Blocks" });
+});
+app.use(router);
 
 var __dirname = path.resolve();
 // app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
@@ -26,19 +36,8 @@ app.get("*", (req, res) =>
 
 const port = process.env.PORT || 5000;
 
-app.get("/users", async (req, res) => {
-  // let seller = req.query.seller || "";
-  // let sellerFilter = seller ? { seller } : {};
-
-  // let orders = await Order.find({ ...sellerFilter }).populate("user", "name");
-
-  // res.send(orders);
-  res.send({ project: "Magic Blocks" });
-});
-
-app.use(router);
-
 const httpServer = http.Server(app);
+// const io = new Server(httpServer, { cors: { origin: "*" } });
 
 httpServer.listen(port, () => {
   console.log(`Server at http://localhost:${port}`);
