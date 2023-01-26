@@ -24,6 +24,7 @@ app.get("/users", async (req, res) => {
   // res.send(orders);
   res.send({ project: "Magic Blocks" });
 });
+
 app.use(router);
 
 var __dirname = path.resolve();
